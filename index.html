@@ -27,21 +27,16 @@
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --bg: #16161e;
-    --surface: #21212e;
-    --surface2: #2c2c3c;
-    --border: rgba(255,255,255,0.08);
-    --border2: rgba(255,255,255,0.16);
-    --text: #f0f0f8;
-    --muted: #888898;
+    --bg: #16161e; --surface: #21212e; --surface2: #2c2c3c;
+    --border: rgba(255,255,255,0.08); --border2: rgba(255,255,255,0.16);
+    --text: #f0f0f8; --muted: #888898;
     --c0d: #0a2a48; --c1d: #082a1a; --c2d: #3a1a08;
     --c3d: #220a38; --c4d: #380a08; --c5d: #2e200a;
   }
 }
 
 body {
-  background: var(--bg);
-  color: var(--text);
+  background: var(--bg); color: var(--text);
   font-family: -apple-system, 'Helvetica Neue', Arial, sans-serif;
   min-height: 100dvh;
   display: flex; flex-direction: column; align-items: center;
@@ -49,17 +44,13 @@ body {
   -webkit-tap-highlight-color: transparent;
   overscroll-behavior: none;
 }
-
 .app { width: 100%; max-width: 1080px; }
 
 header {
   display: flex; align-items: center; justify-content: space-between;
-  margin-bottom: 18px;
-  border-bottom: 1.5px solid var(--border);
-  padding-bottom: 12px;
-  gap: 12px; flex-wrap: wrap;
+  margin-bottom: 18px; border-bottom: 1.5px solid var(--border);
+  padding-bottom: 12px; gap: 12px; flex-wrap: wrap;
 }
-
 .title-input {
   font-size: 18px; font-weight: 700; letter-spacing: 0.02em;
   border: 1.5px solid transparent; background: transparent;
@@ -68,21 +59,15 @@ header {
   transition: background 0.12s, border-color 0.12s;
   min-width: 0; flex: 1;
 }
-.title-input:hover, .title-input:focus {
-  background: var(--surface); border-color: var(--border2);
-}
+.title-input:hover, .title-input:focus { background: var(--surface); border-color: var(--border2); }
 
 .header-right { display: flex; align-items: center; gap: 10px; flex-shrink: 0; }
 .voices-ctrl { display: flex; align-items: center; gap: 7px; }
-.ctrl-label {
-  font-size: 11px; font-weight: 700; letter-spacing: 0.09em;
-  text-transform: uppercase; color: var(--muted); white-space: nowrap;
-}
+.ctrl-label { font-size: 11px; font-weight: 700; letter-spacing: 0.09em; text-transform: uppercase; color: var(--muted); white-space: nowrap; }
 .num-btns { display: flex; gap: 3px; }
 .num-btn {
   width: 28px; height: 28px; border-radius: 6px;
-  border: 1.5px solid var(--border2);
-  background: transparent; color: var(--muted);
+  border: 1.5px solid var(--border2); background: transparent; color: var(--muted);
   font-size: 13px; font-weight: 700; cursor: pointer;
   display: flex; align-items: center; justify-content: center;
   transition: all 0.1s; touch-action: manipulation;
@@ -90,11 +75,7 @@ header {
 .num-btn:hover { color: var(--text); border-color: var(--text); }
 .num-btn.active { background: var(--text); border-color: var(--text); color: var(--bg); }
 
-.controls {
-  display: flex; align-items: center; gap: 14px;
-  flex-wrap: wrap; margin-bottom: 20px;
-}
-
+.controls { display: flex; align-items: center; gap: 14px; flex-wrap: wrap; margin-bottom: 20px; }
 .play-btn {
   width: 54px; height: 54px; border-radius: 50%;
   border: 2px solid var(--text); background: var(--text); color: var(--bg);
@@ -118,7 +99,6 @@ input[type=range]::-webkit-slider-thumb {
   -webkit-appearance: none; width: 22px; height: 22px; border-radius: 50%;
   background: var(--text); cursor: pointer; transition: transform 0.1s;
 }
-input[type=range]::-webkit-slider-thumb:hover { transform: scale(1.2); }
 input[type=range]::-moz-range-thumb {
   width: 22px; height: 22px; border-radius: 50%;
   background: var(--text); cursor: pointer; border: none;
@@ -128,8 +108,7 @@ input[type=range]::-moz-range-thumb {
 .step-btns { display: flex; gap: 3px; }
 .step-btn {
   padding: 6px 10px; border-radius: 7px;
-  border: 1.5px solid var(--border2);
-  background: transparent; color: var(--muted);
+  border: 1.5px solid var(--border2); background: transparent; color: var(--muted);
   font-size: 13px; font-weight: 700; cursor: pointer;
   transition: all 0.1s; touch-action: manipulation;
 }
@@ -140,8 +119,7 @@ input[type=range]::-moz-range-thumb {
 .subdiv-btns { display: flex; gap: 4px; }
 .subdiv-btn {
   padding: 6px 12px; border-radius: 7px;
-  border: 1.5px solid var(--border2);
-  background: transparent; color: var(--muted);
+  border: 1.5px solid var(--border2); background: transparent; color: var(--muted);
   font-size: 13px; font-weight: 600; cursor: pointer;
   transition: all 0.12s; touch-action: manipulation;
 }
@@ -150,8 +128,7 @@ input[type=range]::-moz-range-thumb {
 
 .metro-section {
   display: flex; align-items: center; gap: 6px;
-  margin-bottom: 10px; overflow-x: auto;
-  -webkit-overflow-scrolling: touch;
+  margin-bottom: 10px; overflow-x: auto; -webkit-overflow-scrolling: touch;
 }
 .metro-label { width: 100px; flex-shrink: 0; }
 .metro-dots { display: flex; gap: 4px; flex: 1; align-items: center; min-width: 0; }
@@ -166,18 +143,14 @@ input[type=range]::-moz-range-thumb {
 
 .voices { display: flex; flex-direction: column; gap: 7px; }
 .voice-row { display: flex; align-items: center; gap: 8px; }
-
 .voice-name-wrap { width: 100px; flex-shrink: 0; text-align: right; }
 .voice-name {
   font-size: 13px; font-weight: 700; letter-spacing: 0.05em; text-transform: uppercase;
   border: 1.5px solid transparent; background: transparent;
   text-align: right; width: 100%; outline: none; cursor: text;
-  padding: 4px 6px; border-radius: 6px; transition: background 0.12s, border-color 0.12s;
-  color: inherit;
+  padding: 4px 6px; border-radius: 6px; transition: background 0.12s, border-color 0.12s; color: inherit;
 }
-.voice-name:hover, .voice-name:focus {
-  background: var(--surface); border-color: var(--border2);
-}
+.voice-name:hover, .voice-name:focus { background: var(--surface); border-color: var(--border2); }
 
 .steps-row {
   display: flex; gap: 3px; flex: 1; align-items: center;
@@ -185,7 +158,6 @@ input[type=range]::-moz-range-thumb {
   min-width: 0; padding-bottom: 2px;
 }
 .step-sep { width: 1px; height: var(--step-h); background: var(--border2); flex-shrink: 0; margin: 0 1px; }
-
 .step {
   flex: 1; min-width: 28px; height: var(--step-h);
   border-radius: var(--radius); border: 2px solid;
@@ -201,37 +173,30 @@ input[type=range]::-moz-range-thumb {
 .vr0 .voice-name { color: var(--c0); }
 .vr0 .step { background: var(--c0d); border-color: var(--c0); }
 .vr0 .step.on { background: var(--c0); box-shadow: 0 2px 8px rgba(26,127,224,0.4); }
-
 .vr1 .voice-name { color: var(--c1); }
 .vr1 .step { background: var(--c1d); border-color: var(--c1); }
 .vr1 .step.on { background: var(--c1); box-shadow: 0 2px 8px rgba(18,160,90,0.4); }
-
 .vr2 .voice-name { color: var(--c2); }
 .vr2 .step { background: var(--c2d); border-color: var(--c2); }
 .vr2 .step.on { background: var(--c2); box-shadow: 0 2px 8px rgba(217,91,32,0.4); }
-
 .vr3 .voice-name { color: var(--c3); }
 .vr3 .step { background: var(--c3d); border-color: var(--c3); }
 .vr3 .step.on { background: var(--c3); box-shadow: 0 2px 8px rgba(139,52,200,0.4); }
-
 .vr4 .voice-name { color: var(--c4); }
 .vr4 .step { background: var(--c4d); border-color: var(--c4); }
 .vr4 .step.on { background: var(--c4); box-shadow: 0 2px 8px rgba(192,57,43,0.4); }
-
 .vr5 .voice-name { color: var(--c5); }
 .vr5 .step { background: var(--c5d); border-color: var(--c5); }
 .vr5 .step.on { background: var(--c5); box-shadow: 0 2px 8px rgba(176,125,16,0.4); }
 
 .clear-btn {
   padding: 5px 10px; border-radius: 7px;
-  border: 1.5px solid var(--border2);
-  background: transparent; color: var(--muted);
+  border: 1.5px solid var(--border2); background: transparent; color: var(--muted);
   font-size: 12px; font-weight: 600; cursor: pointer; flex-shrink: 0;
   transition: all 0.1s; touch-action: manipulation;
 }
 .clear-btn:hover { border-color: #c0392b; color: #c0392b; }
 
-/* Mobile layout */
 @media (max-width: 600px) {
   :root { --step-h: 40px; }
   body { padding: 14px 8px 28px; }
@@ -246,13 +211,8 @@ input[type=range]::-moz-range-thumb {
   .metro-label { width: 72px; }
   .title-input { font-size: 16px; }
 }
+@media (max-width: 400px) { .subdiv-group { margin-left: 0; } .controls { gap: 8px; } }
 
-@media (max-width: 400px) {
-  .subdiv-group { margin-left: 0; }
-  .controls { gap: 8px; }
-}
-
-/* scrollbar sottile */
 ::-webkit-scrollbar { height: 3px; width: 3px; }
 ::-webkit-scrollbar-track { background: transparent; }
 ::-webkit-scrollbar-thumb { background: var(--border2); border-radius: 2px; }
@@ -272,10 +232,10 @@ input[type=range]::-moz-range-thumb {
   </header>
 
   <div class="controls">
-    <button class="play-btn" id="playBtn" onclick="togglePlay()" aria-label="Play/Stop">▶</button>
+    <button class="play-btn" id="playBtn" aria-label="Play/Stop">▶</button>
     <div class="bpm-group">
       <span class="ctrl-label">BPM</span>
-      <input type="range" id="bpmSlider" min="40" max="160" value="80" step="1" oninput="setBpm(this.value)" aria-label="BPM">
+      <input type="range" id="bpmSlider" min="40" max="160" value="80" step="1" aria-label="BPM">
       <span class="bpm-value" id="bpmVal">80</span>
     </div>
     <div class="steps-ctrl">
@@ -284,10 +244,10 @@ input[type=range]::-moz-range-thumb {
     </div>
     <div class="subdiv-group">
       <span class="ctrl-label">suddivisione</span>
-      <div class="subdiv-btns">
-        <button class="subdiv-btn active" onclick="setSubdiv(1,this)">♩ quarti</button>
-        <button class="subdiv-btn" onclick="setSubdiv(2,this)">♪ ottavi</button>
-        <button class="subdiv-btn" onclick="setSubdiv(3,this)">♩. terzine</button>
+      <div class="subdiv-btns" id="subdivBtns">
+        <button class="subdiv-btn active" data-s="1">♩ quarti</button>
+        <button class="subdiv-btn" data-s="2">♪ ottavi</button>
+        <button class="subdiv-btn" data-s="3">♩. terzine</button>
       </div>
     </div>
   </div>
@@ -301,72 +261,48 @@ input[type=range]::-moz-range-thumb {
   <div class="voices" id="voices"></div>
 
 </div>
-
 <script>
 const DEFAULT_NAMES = ['mani','piedi','voce','schiocco','ginocchia','petto'];
 const MAX_VOICES = 6;
 const BEATS_OPTIONS = [1, 2, 3, 4];
 
-let numVoices = 3;
-let numBeats = 2;
-let subdiv = 1;
-let bpm = 80;
-let playing = false;
-let currentStep = 0;
-let timerId = null;
-let scheduledTime = 0;
+let numVoices = 3, numBeats = 2, subdiv = 1, bpm = 80;
+let playing = false, currentStep = 0, timerId = null;
 let voiceNames = [...DEFAULT_NAMES];
 let grid = Array.from({length: MAX_VOICES}, () => Array(48).fill(false));
 
-// Audio context con Web Audio API — fix iOS Safari
+// ── Audio ────────────────────────────────────────────────────────────────────
+// Su iOS Safari l'AudioContext DEVE essere creato dentro un handler
+// di evento utente (click/touchend). Per questo lo creiamo LAZY
+// solo dentro togglePlay(), e lo teniamo poi riutilizzato.
 let audioCtx = null;
-function getCtx() {
+
+function getOrCreateCtx() {
   if (!audioCtx) {
     audioCtx = new (window.AudioContext || window.webkitAudioContext)();
   }
   return audioCtx;
 }
 
-// iOS richiede che l'AudioContext venga creato e ripreso
-// direttamente dentro un gestore di evento utente (touchstart/click).
-// Lo inizializziamo al primo tocco su tutta la pagina.
-function unlockAudio() {
-  const ctx = getCtx();
-  if (ctx.state === 'suspended') {
-    ctx.resume();
-  }
-  // "Sblocco" classico iOS: suona un buffer silenzioso
-  const buf = ctx.createBuffer(1, 1, 22050);
-  const src = ctx.createBufferSource();
-  src.buffer = buf;
-  src.connect(ctx.destination);
-  src.start(0);
-  document.removeEventListener('touchstart', unlockAudio, true);
-  document.removeEventListener('touchend', unlockAudio, true);
-  document.removeEventListener('click', unlockAudio, true);
-}
-document.addEventListener('touchstart', unlockAudio, true);
-document.addEventListener('touchend', unlockAudio, true);
-document.addEventListener('click', unlockAudio, true);
-
-function playClick(accent, when) {
-  const ctx = getCtx();
-  const t = when || ctx.currentTime;
-  const o = ctx.createOscillator();
-  const g = ctx.createGain();
+function playClick(accent) {
+  if (!audioCtx) return;
+  const ctx = audioCtx;
+  if (ctx.state !== 'running') return;
+  const o = ctx.createOscillator(), g = ctx.createGain();
   o.connect(g); g.connect(ctx.destination);
   o.frequency.value = accent ? 1400 : 900;
-  g.gain.setValueAtTime(accent ? 0.55 : 0.3, t);
-  g.gain.exponentialRampToValueAtTime(0.001, t + 0.055);
-  o.start(t); o.stop(t + 0.07);
+  g.gain.setValueAtTime(accent ? 0.55 : 0.3, ctx.currentTime);
+  g.gain.exponentialRampToValueAtTime(0.001, ctx.currentTime + 0.055);
+  o.start(); o.stop(ctx.currentTime + 0.07);
 }
 
+// ── Helpers ──────────────────────────────────────────────────────────────────
 function stepsPerBeat() { return subdiv === 1 ? 4 : subdiv === 2 ? 8 : 12; }
-function totalSteps() { return stepsPerBeat() * numBeats; }
-function stepsPerTempo() { return subdiv; }
+function totalSteps()   { return stepsPerBeat() * numBeats; }
+function stepsPerTempo(){ return subdiv; }
+function stepMs()       { return (60000 / bpm) / subdiv; }
 
-function stepMs() { return (60000 / bpm) / subdiv; }
-
+// ── Render ───────────────────────────────────────────────────────────────────
 function renderVoiceBtns() {
   const cont = document.getElementById('voicesBtns');
   cont.innerHTML = '';
@@ -385,7 +321,7 @@ function renderStepBtns() {
   BEATS_OPTIONS.forEach(n => {
     const b = document.createElement('button');
     b.className = 'step-btn' + (n === numBeats ? ' active' : '');
-    b.textContent = n === 1 ? '1' : n;
+    b.textContent = n;
     b.onclick = () => { stop(); numBeats = n; renderStepBtns(); renderMetro(); renderVoices(); };
     cont.appendChild(b);
   });
@@ -394,9 +330,7 @@ function renderStepBtns() {
 function renderMetro() {
   const cont = document.getElementById('metro');
   cont.innerHTML = '';
-  const ts = totalSteps();
-  const spt = stepsPerTempo();
-  const spb = stepsPerBeat();
+  const ts = totalSteps(), spt = stepsPerTempo(), spb = stepsPerBeat();
   for (let si = 0; si < ts; si++) {
     if (si > 0 && si % spb === 0) {
       const sep = document.createElement('div');
@@ -407,9 +341,9 @@ function renderMetro() {
       const sep = document.createElement('div'); sep.className = 'metro-sep'; cont.appendChild(sep);
     }
     const d = document.createElement('div');
-    const isBeatDownbeat = si % spb === 0;
-    d.className = 'metro-dot' + (isBeatDownbeat ? ' beat1' : '');
-    if (isBeatDownbeat && si > 0) d.style.borderColor = 'rgba(0,0,0,0.4)';
+    const isBD = si % spb === 0;
+    d.className = 'metro-dot' + (isBD ? ' beat1' : '');
+    if (isBD && si > 0) d.style.borderColor = 'rgba(0,0,0,0.4)';
     d.id = 'mdot-' + si;
     cont.appendChild(d);
   }
@@ -418,35 +352,25 @@ function renderMetro() {
 function renderVoices() {
   const cont = document.getElementById('voices');
   cont.innerHTML = '';
-  const ts = totalSteps();
-  const spt = stepsPerTempo();
-  const spb = stepsPerBeat();
-
+  const ts = totalSteps(), spt = stepsPerTempo(), spb = stepsPerBeat();
   for (let vi = 0; vi < numVoices; vi++) {
     const row = document.createElement('div');
     row.className = 'voice-row vr' + vi;
-
     const nameWrap = document.createElement('div');
     nameWrap.className = 'voice-name-wrap';
     const inp = document.createElement('input');
     inp.type = 'text'; inp.className = 'voice-name';
     inp.value = voiceNames[vi]; inp.maxLength = 14;
-    inp.addEventListener('change', () => {
-      voiceNames[vi] = inp.value.trim() || voiceNames[vi];
-      inp.value = voiceNames[vi];
-    });
+    inp.addEventListener('change', () => { voiceNames[vi] = inp.value.trim() || voiceNames[vi]; inp.value = voiceNames[vi]; });
     inp.addEventListener('keydown', e => { if (e.key === 'Enter') inp.blur(); });
     nameWrap.appendChild(inp);
     row.appendChild(nameWrap);
-
     const stepsRow = document.createElement('div');
     stepsRow.className = 'steps-row';
-
     for (let si = 0; si < ts; si++) {
       if (si > 0 && si % spb === 0) {
         const sep = document.createElement('div');
-        sep.className = 'step-sep';
-        sep.style.cssText = 'width:2px;background:rgba(0,0,0,0.3)';
+        sep.className = 'step-sep'; sep.style.cssText = 'width:2px;background:rgba(0,0,0,0.3)';
         stepsRow.appendChild(sep);
       } else if (si > 0 && si % spt === 0) {
         const sep = document.createElement('div'); sep.className = 'step-sep'; stepsRow.appendChild(sep);
@@ -454,16 +378,11 @@ function renderVoices() {
       const cell = document.createElement('div');
       cell.className = 'step ' + (grid[vi][si] ? 'on' : 'off');
       cell.id = 'c-' + vi + '-' + si;
-      cell.setAttribute('role', 'button');
-      cell.setAttribute('aria-pressed', grid[vi][si] ? 'true' : 'false');
       cell.onclick = () => toggle(vi, si);
       stepsRow.appendChild(cell);
     }
-
     const clr = document.createElement('button');
-    clr.className = 'clear-btn';
-    clr.textContent = '✕';
-    clr.title = 'Svuota voce';
+    clr.className = 'clear-btn'; clr.textContent = '✕'; clr.title = 'Svuota voce';
     clr.onclick = () => { grid[vi] = Array(48).fill(false); renderVoices(); };
     row.appendChild(stepsRow);
     row.appendChild(clr);
@@ -474,20 +393,13 @@ function renderVoices() {
 function toggle(vi, si) {
   grid[vi][si] = !grid[vi][si];
   const c = document.getElementById('c-' + vi + '-' + si);
-  if (c) {
-    c.classList.toggle('on', grid[vi][si]);
-    c.classList.toggle('off', !grid[vi][si]);
-    c.setAttribute('aria-pressed', grid[vi][si] ? 'true' : 'false');
-  }
+  if (c) { c.classList.toggle('on', grid[vi][si]); c.classList.toggle('off', !grid[vi][si]); }
 }
 
+// ── Sequencer ────────────────────────────────────────────────────────────────
 function tick() {
-  const ts = totalSteps();
-  const spt = stepsPerTempo();
-  const spb = stepsPerBeat();
+  const ts = totalSteps(), spt = stepsPerTempo(), spb = stepsPerBeat();
   const prev = (currentStep - 1 + ts) % ts;
-
-  // rimuovi cursore precedente
   for (let vi = 0; vi < numVoices; vi++) {
     const el = document.getElementById('c-' + vi + '-' + prev);
     if (el) el.classList.remove('cursor');
@@ -495,53 +407,44 @@ function tick() {
   const pd = document.getElementById('mdot-' + prev);
   if (pd) pd.classList.remove('on');
 
-  // suona click
-  const isBeatDownbeat = currentStep % spb === 0;
-  const isTempoDownbeat = currentStep % spt === 0;
-  if (isBeatDownbeat) playClick(true);
-  else if (isTempoDownbeat) playClick(false);
+  const isBD = currentStep % spb === 0;
+  const isTD = currentStep % spt === 0;
+  if (isBD) playClick(true);
+  else if (isTD) playClick(false);
 
-  // mostra cursore corrente
   for (let vi = 0; vi < numVoices; vi++) {
     const el = document.getElementById('c-' + vi + '-' + currentStep);
     if (el) el.classList.add('cursor');
   }
   const cd = document.getElementById('mdot-' + currentStep);
   if (cd) cd.classList.add('on');
-
   currentStep = (currentStep + 1) % ts;
 }
 
-function startLoop() {
-  tick();
-  timerId = setInterval(tick, stepMs());
-}
+function startLoop() { tick(); timerId = setInterval(tick, stepMs()); }
 
 function stopLoop() {
   clearInterval(timerId); timerId = null;
   const ts = totalSteps();
   for (let vi = 0; vi < numVoices; vi++)
-    for (let si = 0; si < ts; si++) {
-      const e = document.getElementById('c-' + vi + '-' + si);
-      if (e) e.classList.remove('cursor');
-    }
-  for (let si = 0; si < ts; si++) {
-    const d = document.getElementById('mdot-' + si);
-    if (d) d.classList.remove('on');
-  }
+    for (let si = 0; si < ts; si++) { const e = document.getElementById('c-' + vi + '-' + si); if (e) e.classList.remove('cursor'); }
+  for (let si = 0; si < ts; si++) { const d = document.getElementById('mdot-' + si); if (d) d.classList.remove('on'); }
 }
 
 function stop() {
-  if (playing) {
-    playing = false; stopLoop();
-    document.getElementById('playBtn').textContent = '▶';
-    document.getElementById('playBtn').classList.remove('running');
-  }
+  if (!playing) return;
+  playing = false; stopLoop();
+  document.getElementById('playBtn').textContent = '▶';
+  document.getElementById('playBtn').classList.remove('running');
 }
 
+// ── togglePlay: crea/riprende l'AudioContext QUI, dentro il click ────────────
 function togglePlay() {
-  const ctx = getCtx();
-  const doStart = () => {
+  // Crea il context al primo click — questo è dentro un handler utente,
+  // quindi iOS lo permette. Se esiste già, lo riprendiamo.
+  const ctx = getOrCreateCtx();
+
+  const doToggle = () => {
     playing = !playing;
     const btn = document.getElementById('playBtn');
     if (playing) {
@@ -552,7 +455,13 @@ function togglePlay() {
       stopLoop();
     }
   };
-  if (ctx.state === 'suspended') { ctx.resume().then(doStart); } else { doStart(); }
+
+  if (ctx.state === 'running') {
+    doToggle();
+  } else {
+    // suspended o closed — resume() e poi partiamo
+    ctx.resume().then(doToggle).catch(() => doToggle());
+  }
 }
 
 function setBpm(v) {
@@ -561,14 +470,22 @@ function setBpm(v) {
   if (playing) { stopLoop(); currentStep = 0; startLoop(); }
 }
 
-function setSubdiv(n, btn) {
+function setSubdiv(n) {
   stop(); subdiv = n;
-  document.querySelectorAll('.subdiv-btn').forEach(b => b.classList.remove('active'));
-  btn.classList.add('active');
-  currentStep = 0; renderStepBtns(); renderMetro(); renderVoices();
+  document.querySelectorAll('.subdiv-btn').forEach(b => {
+    b.classList.toggle('active', parseInt(b.dataset.s) === n);
+  });
+  currentStep = 0; renderMetro(); renderVoices();
 }
 
-// Prevenire zoom accidentale su iOS col doppio tap
+// ── Init ──────────────────────────────────────────────────────────────────────
+document.getElementById('playBtn').addEventListener('click', togglePlay);
+document.getElementById('bpmSlider').addEventListener('input', function() { setBpm(this.value); });
+document.querySelectorAll('.subdiv-btn').forEach(b => {
+  b.addEventListener('click', () => setSubdiv(parseInt(b.dataset.s)));
+});
+
+// Prevenire zoom doppio tap su iOS
 let lastTap = 0;
 document.addEventListener('touchend', function(e) {
   const now = Date.now();
