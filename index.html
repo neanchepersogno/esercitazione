@@ -318,7 +318,7 @@ let scheduledTime = 0;
 let voiceNames = [...DEFAULT_NAMES];
 let grid = Array.from({length: MAX_VOICES}, () => Array(48).fill(false));
 
-// Audio context con Web Audio API
+// Audio context con Web Audio API — fix iOS Safari
 let audioCtx = null;
 function getCtx() {
   if (!audioCtx) {
@@ -326,6 +326,28 @@ function getCtx() {
   }
   return audioCtx;
 }
+
+// iOS richiede che l'AudioContext venga creato e ripreso
+// direttamente dentro un gestore di evento utente (touchstart/click).
+// Lo inizializziamo al primo tocco su tutta la pagina.
+function unlockAudio() {
+  const ctx = getCtx();
+  if (ctx.state === 'suspended') {
+    ctx.resume();
+  }
+  // "Sblocco" classico iOS: suona un buffer silenzioso
+  const buf = ctx.createBuffer(1, 1, 22050);
+  const src = ctx.createBufferSource();
+  src.buffer = buf;
+  src.connect(ctx.destination);
+  src.start(0);
+  document.removeEventListener('touchstart', unlockAudio, true);
+  document.removeEventListener('touchend', unlockAudio, true);
+  document.removeEventListener('click', unlockAudio, true);
+}
+document.addEventListener('touchstart', unlockAudio, true);
+document.addEventListener('touchend', unlockAudio, true);
+document.addEventListener('click', unlockAudio, true);
 
 function playClick(accent, when) {
   const ctx = getCtx();
@@ -519,16 +541,18 @@ function stop() {
 
 function togglePlay() {
   const ctx = getCtx();
-  if (ctx.state === 'suspended') ctx.resume();
-  playing = !playing;
-  const btn = document.getElementById('playBtn');
-  if (playing) {
-    btn.textContent = '■'; btn.classList.add('running');
-    currentStep = 0; startLoop();
-  } else {
-    btn.textContent = '▶'; btn.classList.remove('running');
-    stopLoop();
-  }
+  const doStart = () => {
+    playing = !playing;
+    const btn = document.getElementById('playBtn');
+    if (playing) {
+      btn.textContent = '■'; btn.classList.add('running');
+      currentStep = 0; startLoop();
+    } else {
+      btn.textContent = '▶'; btn.classList.remove('running');
+      stopLoop();
+    }
+  };
+  if (ctx.state === 'suspended') { ctx.resume().then(doStart); } else { doStart(); }
 }
 
 function setBpm(v) {
